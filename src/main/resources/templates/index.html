@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="author : ${authors}">
+
+    <h2 th:text="${author.name}"></h2>
+
+<ul>
+    <th:block th:each="book : ${author.books}">
+    <li th:inline="text"><b>[[${book.title}]]</b> released in [[${book.year}]].</li>
+    </th:block>
+</ul>
+</div>
+
+</body>
+</html>
